@@ -12,6 +12,7 @@ let duration = music.duration;
 music.addEventListener("timeupdate", timeUpdate, false);
 
 start.addEventListener('click', () => {
+    printCapcTime();
     playAudio();
 
 })
@@ -102,7 +103,11 @@ function printTime() {
     startInner.innerHTML = `${calcTimes(music.currentTime)}`;
 }
 function printCapcTime() {
-    capacityInner.innerHTML = `${calcTimes(music.duration)}`;
+    let duration = calcTimes(music.duration);
+    if (isNaN(music.duration)) {
+        duration = calcTimes(0);
+    }
+    capacityInner.innerHTML = duration;
 }
 
 function calcTimes(secondsInp) {
