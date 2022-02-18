@@ -102,7 +102,7 @@ function printTime() {
     startInner.innerHTML = `${calcTimes(music.currentTime)}`;
 }
 function printCapcTime() {
-    capacityInner.innerHTML = `${calcTimes(music.duration)}`;
+    capacityInner.innerHTML = calcTimes(music.duration) || 0;
 }
 
 function calcTimes(secondsInp) {
