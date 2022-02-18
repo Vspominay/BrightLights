@@ -103,11 +103,15 @@ function printTime() {
     startInner.innerHTML = `${calcTimes(music.currentTime)}`;
 }
 function printCapcTime() {
+<<<<<<< HEAD
     let duration = calcTimes(music.duration);
     if (isNaN(music.duration)) {
         duration = calcTimes(0);
     }
     capacityInner.innerHTML = duration;
+=======
+    capacityInner.innerHTML = calcTimes(music.duration) || 0;
+>>>>>>> 9a06ba4087de9b3b61bfa23787bbf0aeb8cd64ff
 }
 
 function calcTimes(secondsInp) {
